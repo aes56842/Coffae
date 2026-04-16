@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>COFFAÉ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@300;400&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="gallery.css" />
+</head>
+<body>
+
+<nav>
+  <a class="logo" href="index.html">COFFAÉ</a>
+  <div class="nav-right">
+    <a href="product.html">Product</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+
+<!-- ── HERO  (save as: coffae-wide.jpg) ── -->
+<div class="hero" onclick="lb('img/coffae-wide.jpg')">
+  <img src="img/coffae-wide.jpg" alt="COFFAÉ"
+       onerror="this.style.display='none'; document.querySelector('.hero-ph').style.display='flex';" />
+  <div class="hero-ph" style="display:none; position:absolute; inset:0;">
+    <span class="ph-label">coffae-wide.jpg</span>
+  </div>
+  <div class="hero-wordmark">COFFAÉ</div>
+</div>
+
+<!-- ── PAIR  (coffae-angle.jpg + coffae-top.jpg) ── -->
+<div class="pair">
+  <div class="pair-item" onclick="lb('img/coffae-angle.jpg')">
+    <img src="img/coffae-angle.jpg" alt="COFFAÉ — nested"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="pair-ph" style="display:none; position:absolute; inset:0;">
+      <span class="ph-label">coffae-angle.jpg</span>
+    </div>
+  </div>
+  <div class="pair-item" onclick="lb('img/coffae-top.jpg')">
+    <img src="img/coffae-top.jpg" alt="COFFAÉ — overhead"
+         onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+    <div class="pair-ph" style="display:none; position:absolute; inset:0;">
+      <span class="ph-label">coffae-top.jpg</span>
+    </div>
+  </div>
+</div>
+
+<div class="caption-row">
+  <span class="cap-name">Nested Frame Coffee Table</span>
+  <span class="cap-detail">Solid Walnut · Tempered Glass · Charcoal</span>
+</div>
+
+<!-- ── TEXT ── -->
+<div class="text-break">
+  <p class="tb-eyebrow">COFFAÉ</p>
+  <h2 class="tb-headline">One motion.<br/>Every use case.</h2>
+  <p class="tb-body">
+    A two-part nested frame that doubles its surface area with a single
+    slide — no hardware, no tools. Solid American black walnut,
+    recessed tempered glass, and a charcoal upholstered stool that
+    disappears underneath when you don't need it.
+  </p>
+</div>
+
+<!-- ── SPECS ── -->
+<div class="spec-strip">
+  <div class="spec-item">
+    <p class="spec-key">Material</p>
+    <p class="spec-val">American<br/>Black Walnut</p>
+  </div>
+  <div class="spec-item">
+    <p class="spec-key">Top</p>
+    <p class="spec-val">Tempered<br/>Glass, Recessed</p>
+  </div>
+  <div class="spec-item">
+    <p class="spec-key">Stool</p>
+    <p class="spec-val">Nesting,<br/>Charcoal Fabric</p>
+  </div>
+  <div class="spec-item">
+    <p class="spec-key">Mechanism</p>
+    <p class="spec-val">No parts<br/>or hardware</p>
+  </div>
+</div>
+
+<!-- ── FULL-BLEED REPEAT ── -->
+<div class="full" style="margin-top:2px;" onclick="lb('img/coffae-wide.jpg')">
+  <img src="img/coffae-wide.jpg" alt="COFFAÉ"
+       onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" />
+  <div class="full-ph" style="display:none;">
+    <span class="ph-label">coffae-wide.jpg</span>
+  </div>
+</div>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <span class="ft-logo">COFFAÉ</span>
+  <span class="ft-copy">© 2026</span>
+</footer>
+
+<!-- ── LIGHTBOX ── -->
+<div class="lb" id="lb" onclick="closeLb()">
+  <button class="lb-close" onclick="closeLb()">Close</button>
+  <img id="lb-img" src="" alt="" onclick="event.stopPropagation()" />
+</div>
+
+<script>
+  function lb(src) {
+    document.getElementById('lb-img').src = src;
+    document.getElementById('lb').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLb() {
+    document.getElementById('lb').classList.remove('open');
+    document.getElementById('lb-img').src = '';
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLb(); });
+</script>
+
+</body>
+</html>

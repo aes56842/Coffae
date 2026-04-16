@@ -1,0 +1,329 @@
+:root {
+    --f: 'Playfair Display', Georgia, serif;
+    --s: 'Montserrat', sans-serif;
+
+    --americano: #1E1D1D;
+    --brew:      #303031;
+    --mocha:     #5A4D41;
+    --chai:      #7E6957;
+    --roast:     #867C70;
+    --ink:       #C8BAA4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--americano);
+    font-family: var(--s);
+    color: var(--ink);
+    min-height: 100vh;
+}
+
+.contact-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 48px;
+    border-bottom: 0.5px solid var(--mocha);
+}
+
+.contact-logo {
+    font-family: var(--f);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.contact-nav-links {
+    display: flex;
+    gap: 32px;
+}
+
+.contact-nav-links a {
+    color: var(--ink);
+    text-decoration: none;
+    font-family: var(--s);
+    font-size: 0.55rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+}
+
+.contact-nav-links a:hover {
+    color: var(--roast);
+}
+
+.contact-nav-active {
+    color: var(--ink) !important;
+    border-bottom: 0.5px solid var(--chai);
+    padding-bottom: 2px;
+}
+
+.contact-main {
+    display: flex;
+    justify-content: center;
+    padding: 80px 48px;
+}
+
+.contact-body {
+    width: 100%;
+    max-width: 520px;
+}
+
+.contact-eyebrow {
+    font-family: var(--s);
+    font-size: 0.52rem;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--chai);
+    margin-bottom: 16px;
+}
+
+.contact-title {
+    font-family: var(--f);
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    margin-bottom: 48px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.contact-form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+}
+
+.contact-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-label {
+    font-family: var(--s);
+    font-size: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--chai);
+}
+
+.contact-input,
+.contact-textarea,
+.contact-select {
+    background: transparent;
+    border: none;
+    border-bottom: 0.5px solid var(--mocha);
+    color: var(--ink);
+    font-family: var(--s);
+    font-size: 0.75rem;
+    font-weight: 300;
+    padding: 10px 0;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+}
+
+.contact-input:focus,
+.contact-textarea:focus,
+.contact-select:focus {
+    border-bottom-color: var(--roast);
+}
+
+.contact-input::placeholder,
+.contact-textarea::placeholder {
+    color: var(--mocha);
+}
+
+.contact-select option {
+    background: var(--americano);
+    color: var(--ink);
+}
+
+.contact-textarea {
+    resize: none;
+    min-height: 100px;
+}
+
+.contact-btn {
+    background: var(--chai);
+    color: var(--americano);
+    border: none;
+    padding: 14px 40px;
+    font-family: var(--s);
+    font-size: 0.5rem;
+    font-weight: 400;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    border-radius: 999px;
+    cursor: pointer;
+    align-self: flex-start;
+    transition: background 0.2s;
+}
+
+.contact-btn:hover {
+    background: var(--roast);
+}
+
+.contact-success {
+    display: none;
+    font-family: var(--s);
+    font-size: 0.6rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--chai);
+}
+
+.contact-footer-info {
+    display: flex;
+    gap: 60px;
+    margin-top: 60px;
+    padding-top: 32px;
+    border-top: 0.5px solid var(--mocha);
+}
+
+.contact-info-label {
+    font-family: var(--s);
+    font-size: 0.5rem;
+    font-weight: 300;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--chai);
+    margin-bottom: 6px;
+}
+
+.contact-info-val {
+    font-family: var(--s);
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--ink);
+}
+
+.contact-socials {
+    display: flex;
+    gap: 16px;
+}
+
+.contact-socials a {
+    font-family: var(--s);
+    font-size: 0.7rem;
+    font-weight: 300;
+    color: var(--roast);
+    text-decoration: none;
+}
+
+.contact-socials a:hover {
+    color: var(--ink);
+}
+
+/* ── Thank You Overlay ── */
+.thankyou-overlay {
+    position: fixed;
+    inset: 0;
+    background: var(--americano);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease;
+}
+
+.thankyou-overlay.visible {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.thankyou-logo {
+    position: absolute;
+    top: 32px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--f);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: var(--ink);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.thankyou-logo:hover {
+    opacity: 1;
+}
+
+.thankyou-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.thankyou-eyebrow {
+    font-family: var(--s);
+    font-size: 0.52rem;
+    font-weight: 300;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--chai);
+}
+
+.thankyou-title {
+    font-family: var(--f);
+    font-weight: 300;
+    font-size: clamp(60px, 10vw, 120px);
+    color: var(--ink);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+
+.thankyou-sub {
+    font-family: var(--s);
+    font-size: 0.65rem;
+    font-weight: 300;
+    color: var(--roast);
+    letter-spacing: 0.03em;
+}
+
+/* ── Page Footer ── */
+.contact-page-footer {
+    text-align: center;
+    padding: 40px 0 32px;
+    border-top: 0.5px solid var(--mocha);
+}
+
+.contact-page-footer-logo {
+    font-family: var(--f);
+    font-size: 0.85rem;
+    font-weight: 400;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: var(--roast);
+    text-decoration: none;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.contact-page-footer-logo:hover {
+    opacity: 1;
+}
